@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import './App.scss';
+
+import './Style/main.scss';
 import Accueil from './pages/Accueil';
 import About from './pages/About';
 import FicheLogement from './pages/FicheLogement';
@@ -10,7 +11,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Accueil title="Kasa - accueil" />} />
-      <Route path="/about" element={<About title="Kasa - à propos" />} />
+      <Route path="/About" element={<About title="Kasa - à propos" />} />
       <Route path="/FicheLogement" element={<FicheLogement title="Kasa - logement" />} />
       <Route path="*" element={<Code404 title="Page introuvable" />} />
     </Routes>

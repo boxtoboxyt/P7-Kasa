@@ -1,0 +1,26 @@
+@use '../Style/colors';
+@use '../Style/variables';
+@use '../Style/mediaqueries';
+
+.tag {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  @include mediaqueries.medium {
+    flex-wrap: nowrap;
+  }
+  & li {
+    white-space: nowrap;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    color: colors.$light-color;
+
+    padding: 0.2rem 3rem;
+
+    border-radius: variables.$border-radius-tags;
+    background-color: colors.$primary-color;
+    @include mediaqueries.medium {
+      border-radius: variables.$border-radius;
+    }
+  }
+}

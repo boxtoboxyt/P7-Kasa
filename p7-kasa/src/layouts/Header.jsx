@@ -1,19 +1,18 @@
 import React from 'react';
 
-import classes from "./header.scss";
+import "./header.scss";
 import logo from "../assets/logo/logo.png";
 import Navigation from '../components/Navigation/Navigation';
 
-const header = () => {
+const Header = () => {
     return (
-        <header>
+        <header className='header-menu'>
             <div>
                 <img src={logo} alt="logo Kasa" />
             </div>
             <Navigation />
-
         </header>
     );
 }
 
-export default header;
+export default Header;

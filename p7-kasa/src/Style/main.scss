@@ -1,0 +1,33 @@
+@use './colors';
+
+#root,
+html,
+body {
+  height: 1024px;
+}
+
+html {
+  font-size: 65%;
+  color-scheme: light;
+
+  color: colors.$primary-color;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  all: unset;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+h2 {
+  font-weight: 500;
+}
