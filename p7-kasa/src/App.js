@@ -1,19 +1,19 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import './Style/main.scss';
-import Accueil from './pages/Accueil';
+import './style/main.scss';
+import Home from './pages/Home';
 import About from './pages/About';
-import FicheLogement from './pages/FicheLogement';
-import Code404 from './pages/Code404';
+import Host from './pages/Host';
+import Error404 from './pages/Error404';
 
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Accueil title="Kasa - accueil" />} />
-      <Route path="/About" element={<About title="Kasa - à propos" />} />
-      <Route path="/FicheLogement" element={<FicheLogement title="Kasa - logement" />} />
-      <Route path="*" element={<Code404 title="Page introuvable" />} />
+      <Route path="/" element={<Home title="Kasa - accueil" />} />
+      <Route path="/about" element={<About title="Kasa - à propos" />} />
+      <Route path="/host/:id" element={<Host title="Kasa - logement" />} />
+      <Route path="*" element={<Error404 title="Page introuvable" />} />
     </Routes>
   );
 };

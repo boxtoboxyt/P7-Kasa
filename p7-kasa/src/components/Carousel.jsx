@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import './Carousel.scss';
-import arrow from '../assets/icons/arrowCollaps.svg';
+import classes from './Carousel.module.scss';
+import arrow from '../assets/icons/arrow_back_ios-24px 2.svg';
 
 const Carousel = (host) => {
   const [picture, setPicture] = useState(0);
@@ -27,29 +27,29 @@ const Carousel = (host) => {
   };
 
   return (
-    <div className="carousel">
+    <div className={classes.carousel}>
       <div
-        className={`${"arrows"} ${
-          host.pictures.length <= 1 && "hidden"
+        className={`${classes.arrows} ${
+          host.pictures.length <= 1 && classes.hidden
         }`}
       >
         <img
           src={arrow}
           alt="left arrow"
           onClick={sliderLeft}
-          className="leftArrow"
+          className={classes.leftArrow}
         />
         <img
           src={arrow}
           alt="right arrow"
           onClick={sliderRight}
-          className="rightArrow"
+          className={classes.rightArrow}
         />
       </div>
       <li
-        className={`${"img"} ${
-          slidingRight ? "slideRight" : null
-        } ${slidingLeft ? "slideLeft" : null}`}
+        className={`${classes.img} ${
+          slidingRight ? classes.slideRight : null
+        } ${slidingLeft ? classes.slideLeft : null}`}
       >
         {/*<li className={classes.img}>*/}
         <img
@@ -58,7 +58,7 @@ const Carousel = (host) => {
           // className={sliding ? classes.slide : null}
         />
       </li>
-      <span className="hidden">{`${picture + 1}/${
+      <span className={classes.hidden}>{`${picture + 1}/${
         host.pictures.length
       }`}</span>
     </div>

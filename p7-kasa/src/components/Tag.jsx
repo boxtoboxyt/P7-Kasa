@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './Tag.scss';
+import classes from './Tag.module.scss';
 
 const tag = (host) => {
   return (
-    <ul className="tag">
+    <ul className={classes.tag}>
       {host.tags.map((tag, index) => (
         <li key={index}>{tag}</li>
       ))}

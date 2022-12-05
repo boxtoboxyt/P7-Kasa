@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react';
 
-import './Rate.scss';
-import StarFull from '../assets/icons/StarFull.svg';
-import StarEmpty from '../assets/icons/StarEmpty.svg';
+import classes from './Rate.module.scss';
+import fullStar from '../assets/icons/fullStar.svg';
+import outlineStar from '../assets/icons/outlineStar.svg';
 
 const Rate = (host) => {
-  const [StarEmptyNumber, setStarEmptyNumber] = useState();
+  const [outlineStarNumber, setOutlineStarNumber] = useState();
   const maxRating = 5;
 
   useEffect(() => {
-    +host.rating < maxRating && setStarEmptyNumber(maxRating - +host.rating);
+    +host.rating < maxRating && setOutlineStarNumber(maxRating - +host.rating);
   }, [host.rating]);
 
   return (
-    <div className="rate">
+    <div className={classes.rate}>
       {[...Array(+host.rating)].map((e, index) => {
-        return <img key={index} src={StarFull} alt="rate" />;
+        return <img key={index} src={fullStar} alt="rate" />;
       })}
-      {StarEmpty &&
-        [...Array(StarEmptyNumber)].map((e, index) => {
-          return <img key={index} src={StarEmpty} alt="rate" />;
+      {outlineStarNumber &&
+        [...Array(outlineStarNumber)].map((e, index) => {
+          return <img key={index} src={outlineStar} alt="rate" />;
         })}
     </div>
   );

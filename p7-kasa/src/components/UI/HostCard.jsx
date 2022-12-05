@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import './HostCard.scss';
+import classes from './HostCard.module.scss';
 
 const HostCard = (host) => {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ const HostCard = (host) => {
   };
 
   return (
-    <div className='card' onClick={getHostId}>
+    <div className={classes.card} onClick={getHostId}>
       <h2>{host.title}</h2>
       <img src={host.cover} alt="host place" />
     </div>

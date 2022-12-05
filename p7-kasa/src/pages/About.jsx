@@ -1,32 +1,35 @@
 import React from 'react';
 
-import data from '../api/About.json';
+import data from '../api/about.json';
 
-import './About.scss';
-import background from '../assets/images/kalen-emsley-Bkci_8qcdvQ-unsplash 2.png';
+import classes from './About.module.scss';
+import bgAPropos from '../assets/images/bg-aPropos.jpg';
+import bgAProposXl from '../assets/images/bg-aPropos-XL.jpg';
 
-import Header from '../layouts/Header';
-import Footer from '../layouts/Footer';
-import Collaps from '../components/Collaps';
+import useDocumentTitle from '../hook/useDocumentTitle';
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
+import CollapseCard from '../components/CollapseCard';
 
-const About = () => {
+const About = ({ title }) => {
+  useDocumentTitle(title);
   return (
-    <div className="content">
-      <div className="contentCenter">
+    <div className={classes.content}>
+      <div className={classes.contentCenter}>
         <Header />
-        <section className="main">
-          <div className="img">
+        <section className={classes.main}>
+          <div className={classes.img}>
             <picture>
-              <source media="(min-width: 992px)" srcSet={background} />
-              <img src={background} alt="background" />
+              <source media="(min-width: 992px)" srcSet={bgAProposXl} />
+              <img src={bgAPropos} alt="background" />
             </picture>
           </div>
 
-          <div className="container">
-            <Collaps {...data.trust} />
-            <Collaps {...data.respect} />
-            <Collaps {...data.service} />
-            <Collaps {...data.security} />
+          <div className={classes.container}>
+            <CollapseCard {...data.trust} />
+            <CollapseCard {...data.respect} />
+            <CollapseCard {...data.service} />
+            <CollapseCard {...data.security} />
           </div>
         </section>
       </div>
