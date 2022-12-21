@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 
 import data from '../api/hosts.json';
 
@@ -17,6 +17,9 @@ const Host = ({ title }) => {
   useDocumentTitle(title);
   const params = useParams();
   const host = data.find((host) => host.id === params.id);
+
+  if (!host) return <Navigate to="/Error404" />;
+
 
   return (
     <div className={classes.content}>
